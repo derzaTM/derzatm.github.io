@@ -22,12 +22,12 @@
         h1 {
             font-size: 3em;
             margin: 20px;
-            animation: fadeIn 5s ease-in-out;
+            animation: fadeOut 5s ease-in-out;
         }
 
         p {
             font-size: 1.5em;
-            animation: fadeIn 5s ease-in-out;
+            animation: fadeOut 5s ease-in-out;
         }
 
         .mask {
@@ -61,24 +61,26 @@
             font-size: 1em;
         }
 
-        .link-container a {
+        .link-container span {
             color: #00ff00;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-
-        .toggle-btn {
             cursor: pointer;
-            font-size: 2em;
+            font-size: 1.5em;
             margin-left: 10px;
         }
 
-        @keyframes fadeIn {
+        .copy-link {
+            display: none;
+            color: #00ff00;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        @keyframes fadeOut {
             from {
-                opacity: 0;
+                opacity: 1;
             }
             to {
-                opacity: 1;
+                opacity: 0;
             }
         }
 
@@ -105,25 +107,29 @@
             <div class="link-container">
                 <h3 onclick="toggleDescription(this)">+ TheHiddenWiki</h3>
                 <p>This is the most famous Dark Web directory. It contains links to many onion websites.</p>
-                <a href="http://thehiddenwiki.onion" target="_blank">Visit The Hidden Wiki</a>
+                <span onclick="copyLink('http://thehiddenwiki.onion')">Copy Link</span>
+                <div class="copy-link" id="copy-thehiddenwiki">http://thehiddenwiki.onion</div>
             </div>
 
             <div class="link-container">
                 <h3 onclick="toggleDescription(this)">+ DarknetMarket</h3>
                 <p>A popular marketplace for Dark Web users, offering various services and products (use cautiously).</p>
-                <a href="http://darknetmarket.onion" target="_blank">Visit Darknet Market</a>
+                <span onclick="copyLink('http://darknetmarket.onion')">Copy Link</span>
+                <div class="copy-link" id="copy-darknetmarket">http://darknetmarket.onion</div>
             </div>
 
             <div class="link-container">
                 <h3 onclick="toggleDescription(this)">+ BlackBookDirectory</h3>
                 <p>A directory of Dark Web sites with a focus on privacy and anonymity.</p>
-                <a href="http://blackbookdirectory.onion" target="_blank">Visit Black Book Directory</a>
+                <span onclick="copyLink('http://blackbookdirectory.onion')">Copy Link</span>
+                <div class="copy-link" id="copy-blackbookdirectory">http://blackbookdirectory.onion</div>
             </div>
 
             <div class="link-container">
                 <h3 onclick="toggleDescription(this)">+ DarkHiddenWiki</h3>
                 <p>A resourceful site for finding Dark Web links and services.</p>
-                <a href="http://darkhiddenwiki.onion" target="_blank">Visit Dark Hidden Wiki</a>
+                <span onclick="copyLink('http://darkhiddenwiki.onion')">Copy Link</span>
+                <div class="copy-link" id="copy-darkhiddenwiki">http://darkhiddenwiki.onion</div>
             </div>
 
             <p>Note: Only visit trusted sites and exercise caution while browsing the dark web.</p>
@@ -146,6 +152,19 @@
                 element.innerText = "+ " + element.innerText.substring(1);
                 description.style.display = "none";
             }
+        }
+
+        function copyLink(link) {
+            var copyText = document.createElement("textarea");
+            copyText.value = link;
+            document.body.appendChild(copyText);
+            copyText.select();
+            document.execCommand("copy");
+            document.body.removeChild(copyText);
+
+            
+            var linkId = "copy-" + link.split("//")[1].split(".onion")[0];
+            document.getElementById(linkId).style.display = "inline-block";
         }
     </script>
 </body>
