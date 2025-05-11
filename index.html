@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Hacking World</title>
+    <title>DerzaLinks</title>
     <style>
         body {
             background-color: #000;
@@ -22,7 +22,7 @@
         h1 {
             font-size: 3em;
             margin: 20px;
-            animation: fadeIn 3s ease-in-out;
+            animation: fadeIn 5s ease-in-out;
         }
 
         p {
@@ -33,22 +33,44 @@
         .mask {
             font-size: 4em;
             color: #ffffff;
-            animation: maskAnim 6s infinite;
+            animation: maskAnim 5s ease-out;
         }
 
-        
         #darkweb-links {
             display: none;
             color: #00ff00;
             margin-top: 20px;
+            text-align: left;
+            width: 80%;
+            margin: auto;
         }
 
-        #darkweb-links a {
+        .link-container {
+            margin-bottom: 20px;
+        }
+
+        .link-container h3 {
+            font-size: 1.8em;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .link-container p {
+            display: none;
+            margin-left: 20px;
+            font-size: 1em;
+        }
+
+        .link-container a {
             color: #00ff00;
             text-decoration: none;
             font-size: 1.2em;
-            margin: 10px 0;
-            display: block;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            font-size: 2em;
+            margin-left: 10px;
         }
 
         @keyframes fadeIn {
@@ -71,7 +93,6 @@
                 opacity: 0;
             }
         }
-
     </style>
 </head>
 <body>
@@ -81,22 +102,51 @@
         <div class="mask">Anonymous</div>
 
         <div id="darkweb-links">
-            <h2>Current Dark Web Domains</h2>
-            <ul>
-                <li><a href="http://darkhiddenwiki.onion" target="_blank">Dark Hidden Wiki</a></li>
-                <li><a href="http://thehiddenwiki.onion" target="_blank">The Hidden Wiki</a></li>
-                <li><a href="http://blackbookdirectory.onion" target="_blank">Black Book Directory</a></li>
-                <li><a href="http://darknetmarket.onion" target="_blank">Darknet Market</a></li>
-            </ul>
+            <div class="link-container">
+                <h3 onclick="toggleDescription(this)">+ TheHiddenWiki</h3>
+                <p>This is the most famous Dark Web directory. It contains links to many onion websites.</p>
+                <a href="http://thehiddenwiki.onion" target="_blank">Visit The Hidden Wiki</a>
+            </div>
+
+            <div class="link-container">
+                <h3 onclick="toggleDescription(this)">+ DarknetMarket</h3>
+                <p>A popular marketplace for Dark Web users, offering various services and products (use cautiously).</p>
+                <a href="http://darknetmarket.onion" target="_blank">Visit Darknet Market</a>
+            </div>
+
+            <div class="link-container">
+                <h3 onclick="toggleDescription(this)">+ BlackBookDirectory</h3>
+                <p>A directory of Dark Web sites with a focus on privacy and anonymity.</p>
+                <a href="http://blackbookdirectory.onion" target="_blank">Visit Black Book Directory</a>
+            </div>
+
+            <div class="link-container">
+                <h3 onclick="toggleDescription(this)">+ DarkHiddenWiki</h3>
+                <p>A resourceful site for finding Dark Web links and services.</p>
+                <a href="http://darkhiddenwiki.onion" target="_blank">Visit Dark Hidden Wiki</a>
+            </div>
+
             <p>Note: Only visit trusted sites and exercise caution while browsing the dark web.</p>
         </div>
     </div>
 
     <script>
-        
         setTimeout(function() {
             document.getElementById("darkweb-links").style.display = "block";
-        }, 3000); 
+        }, 5000);
+
+        function toggleDescription(element) {
+            var description = element.nextElementSibling;
+            var icon = element.innerText.charAt(0);
+
+            if (icon === "+") {
+                element.innerText = "- " + element.innerText.substring(1);
+                description.style.display = "block";
+            } else {
+                element.innerText = "+ " + element.innerText.substring(1);
+                description.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
