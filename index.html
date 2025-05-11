@@ -3,24 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>Welcome to My Hacking World</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #000;
+            color: #00ff00; /* Yeşil metin */
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding-top: 50px;
+            overflow: hidden;
         }
+
         h1 {
-            color: #333;
+            font-size: 3em;
+            margin: 20px;
+            animation: fadeIn 3s ease-in-out;
         }
+
         p {
-            font-size: 20px;
+            font-size: 1.5em;
+            animation: fadeIn 5s ease-in-out;
+        }
+
+        .mask {
+            font-size: 4em;
+            color: #ffffff;
+            animation: maskAnim 6s infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes maskAnim {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My GitHub Page</h1>
-    <p>This is my first GitHub Page hosted via GitHub Pages!</p>
+    <div>
+        <h1>Welcome to My Hacking World</h1>
+        <p>Your skills are now being tested...</p>
+        <div class="mask">Anonymous</div>
+    </div>
 </body>
 </html>
