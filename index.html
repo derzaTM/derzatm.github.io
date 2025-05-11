@@ -7,7 +7,7 @@
     <style>
         body {
             background-color: #000;
-            color: #00ff00; /* Yeşil metin */
+            color: #00ff00;
             font-family: 'Courier New', monospace;
             margin: 0;
             padding: 0;
@@ -36,6 +36,21 @@
             animation: maskAnim 6s infinite;
         }
 
+        
+        #darkweb-links {
+            display: none;
+            color: #00ff00;
+            margin-top: 20px;
+        }
+
+        #darkweb-links a {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 10px 0;
+            display: block;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -56,13 +71,32 @@
                 opacity: 0;
             }
         }
+
     </style>
 </head>
 <body>
     <div>
         <h1>Welcome to My Hacking World</h1>
-        <p>Your skills are now being tested...</p>
+        <p>Your journey into the dark web begins here...</p>
         <div class="mask">Anonymous</div>
+
+        <div id="darkweb-links">
+            <h2>Current Dark Web Domains</h2>
+            <ul>
+                <li><a href="http://darkhiddenwiki.onion" target="_blank">Dark Hidden Wiki</a></li>
+                <li><a href="http://thehiddenwiki.onion" target="_blank">The Hidden Wiki</a></li>
+                <li><a href="http://blackbookdirectory.onion" target="_blank">Black Book Directory</a></li>
+                <li><a href="http://darknetmarket.onion" target="_blank">Darknet Market</a></li>
+            </ul>
+            <p>Note: Only visit trusted sites and exercise caution while browsing the dark web.</p>
+        </div>
     </div>
+
+    <script>
+        
+        setTimeout(function() {
+            document.getElementById("darkweb-links").style.display = "block";
+        }, 3000); 
+    </script>
 </body>
 </html>
