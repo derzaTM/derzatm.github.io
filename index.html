@@ -1,223 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DerzaLinks</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #00ff00;
-            font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden;
-            animation: fadeInBody 2s ease-out forwards;
-        }
-
-        h1, p, .mask {
-            font-size: 3em;
-            margin: 20px;
-            animation: fadeOut 5s ease-in-out forwards, scaleUp 2s ease-in-out;
-        }
-
-        .mask {
-            font-size: 4em;
-            color: #ffffff;
-            animation: maskAnim 5s ease-out forwards, glow 2s infinite alternate;
-        }
-
-        #darkweb-links {
-            display: none;
-            color: #00ff00;
-            margin-top: 20px;
-            text-align: left;
-            width: 80%;
-            margin: auto;
-            animation: fadeInLinks 3s ease-out forwards;
-        }
-
-        .link-container {
-            margin-bottom: 20px;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .link-container h3 {
-            font-size: 1.8em;
-            margin: 10px 0;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .link-container h3:hover {
-            transform: scale(1.1);
-        }
-
-        .link-container p {
-            display: none;
-            margin-left: 20px;
-            font-size: 1em;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .link-container span {
-            color: #00ff00;
-            cursor: pointer;
-            font-size: 1.5em;
-            margin-left: 10px;
-            transition: transform 0.2s;
-        }
-
-        .link-container span:hover {
-            transform: scale(1.2);
-        }
-
-        .copy-link {
-            display: none;
-            color: #00ff00;
-            font-size: 1.2em;
-            cursor: pointer;
-            animation: fadeIn 1s ease-out;
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInLinks {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes maskAnim {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        @keyframes scaleUp {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
-            }
-            100% {
-                text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
-            }
-        }
-    </style>
+    <title>Derza Cyber Security</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
-        <h1>Welcome to My Hacking World</h1>
-        <p>Your journey into the dark web begins here...</p>
-        <div class="mask">Anonymous</div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#metasploit">Metasploit</a></li>
+                <li><a href="#nmap">Nmap</a></li>
+                <li><a href="#sqlmap">SQLMap</a></li>
+                <li><a href="#hydra">Hydra</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div id="darkweb-links">
-            <div class="link-container">
-                <h3 onclick="toggleDescription(this)">+ Ahmia</h3>
-                <p>Ahmia searches hidden services on the Tor network. To access these hidden services, you need the Tor\n browser bundle. Abuse material is not allowed on Ahmia. See our service blacklist and report abuse\n material if you find it in the index. It will be removed as soon as possible.</p>
-                <span onclick="copyLink('http://juhanurmihxlp77nkq76byazcldy2hlmovfu2epvl5ankdibsot4csyd.onion')">Copy Link</span>
-                <div class="copy-link" id="copy-ahmina">Copied</div>
-            </div>
+    <main>
+        <section id="metasploit">
+            <h1>Metasploit</h1>
+            <p>Metasploit ile sızma testleri yapmayı öğrenin...</p>
+        </section>
 
-            <div class="link-container">
-                <h3 onclick="toggleDescription(this)">+ Haystak</h3>
-                <p>haystak: your darknet search engine</p>
-                <span onclick="copyLink('http://haystak5njsmn2hqkewecpaxetahtwhsbsa64jom2k22z5afxhnpxfid.onion')">Copy Link</span>
-                <div class="copy-link" id="copy-haystak">Copied</div>
-            </div>
+        <section id="nmap">
+            <h1>Nmap</h1>
+            <p>Port tarama ve ağ keşfi hakkında bilgiler...</p>
+        </section>
 
-            <div class="link-container">
-                <h3 onclick="toggleDescription(this)">+ Torch</h3>
-                <p>TORCH: Tor search</p>
-                <span onclick="copyLink('http://xmh57jrknzkhv6y3ls3ubitzfqnkrwxhopf5aygthi7d6rplyvk3noyd.onion')">Copy Link</span>
-                <div class="copy-link" id="copy-torch">Copied</div>
-            </div>
+        <section id="sqlmap">
+            <h1>SQLMap</h1>
+            <p>SQL injection testleri ve güvenlik açıklarını keşfetmek...</p>
+        </section>
 
-            <div class="link-container">
-                <h3 onclick="toggleDescription(this)">+ TheHiddenWiki</h3>
-                <p>A resourceful site for finding Dark Web links and services.</p>
-                <span onclick="copyLink('http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion')">Copy Link</span>
-                <div class="copy-link" id="copy-thehiddenwiki">Copied</div>
-            </div>
+        <section id="hydra">
+            <h1>Hydra</h1>
+            <p>Brute force saldırıları ve şifre kırma araçları...</p>
+        </section>
+    </main>
 
-            <p>Note: Only visit trusted sites and exercise caution while browsing the dark web.</p>
-        </div>
-    </div>
-
-    <script>
-        setTimeout(function() {
-            document.getElementById("darkweb-links").style.display = "block";
-        }, 5000);
-
-        setTimeout(function() {
-            document.querySelector("h1").style.display = "none";
-            document.querySelector("p").style.display = "none";
-            document.querySelector(".mask").style.display = "none";
-        }, 5000);
-
-        function toggleDescription(element) {
-            var description = element.nextElementSibling;
-            var icon = element.innerText.charAt(0);
-
-            if (icon === "+") {
-                element.innerText = "- " + element.innerText.substring(1);
-                description.style.display = "block";
-            } else {
-                element.innerText = "+ " + element.innerText.substring(1);
-                description.style.display = "none";
-            }
-        }
-
-        function copyLink(link) {
-            var copyText = document.createElement("textarea");
-            copyText.value = link;
-            document.body.appendChild(copyText);
-            copyText.select();
-            document.execCommand("copy");
-            document.body.removeChild(copyText);
-
-            
-            var linkId = "copy-" + link.split("//")[1].split(".onion")[0];
-            document.getElementById(linkId).style.display = "inline-block";
-        }
-    </script>
+    <footer>
+        <p>&copy; 2025 Derza Cyber Security</p>
+    </footer>
 </body>
 </html>
